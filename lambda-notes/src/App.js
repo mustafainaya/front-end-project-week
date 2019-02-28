@@ -1,13 +1,21 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-// import { Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
+import MyNotes from '../src/Components/rightContent/MyNotes';
 import './App.css';
 
 class App extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			notes: []
+			notes: [
+				{
+					_id: null,
+					title: '',
+					textBody: ''
+				}
+			],
+			error: ''
 		};
 	}
 	componentDidMount() {
@@ -24,7 +32,12 @@ class App extends Component {
 			});
 	}
 	render() {
-		return <div className="App">{/* <Route exact path="/" render={props} /> */}</div>;
+		return (
+			<div className="App">
+				{' '}
+				<Route exact path="/" render={(props) => <MyNotes {...props} notes={this.state.notes} />} />
+			</div>
+		);
 	}
 }
 
