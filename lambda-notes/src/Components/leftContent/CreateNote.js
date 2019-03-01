@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class CreateNoteInput extends Component {
+class CreateNote extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -39,12 +39,14 @@ class CreateNoteInput extends Component {
 		return (
 			<div>
 				<h2>Create a New Note:</h2>
-				<Form onSubmit={this.addNote}>
+				<form onSubmit={this.addNote}>
 					<input type="text" name="title" onChange={this.handleSubmit} value={this.state.note.title} />
 					<input type="text" name="textBody" onChange={this.handleSubmit} value={this.state.note.textBody} />
 					<button type="submit">Save</button>
-				</Form>
+				</form>
 			</div>
 		);
 	}
 }
+
+export default CreateNote;

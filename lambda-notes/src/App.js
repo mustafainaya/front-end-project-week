@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Route } from 'react-router-dom';
 import MyNotes from '../src/Components/rightContent/MyNotes';
+import CreateNote from '../src/Components/leftContent/CreateNote';
 import './App.css';
 
 class App extends Component {
@@ -31,6 +32,15 @@ class App extends Component {
 				console.log('error', err);
 			});
 	}
+	createNote = (note) => {
+		axios
+			.post('https://fe-notes.herokuapp.com/note/create', note)
+			.then((res) => {
+				console.log('responsela', res);
+				this.setState({ notes: res.data });
+			})
+			.catch((err) => console.log('error', err));
+	};
 	render() {
 		return (
 			<div className="App">
