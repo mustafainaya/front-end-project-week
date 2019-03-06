@@ -38,7 +38,7 @@ class App extends Component {
 			.post('https://fe-notes.herokuapp.com/note/create', note)
 			.then((res) => {
 				console.log('responsela', res);
-				this.setState({ notes: res.data });
+				this.setState((prevState) => ({ notes: [ ...prevState.notes, note ] }));
 			})
 			.catch((err) => console.log('error', err));
 	};
