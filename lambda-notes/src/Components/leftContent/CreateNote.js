@@ -22,7 +22,7 @@ class CreateNote extends Component {
 			}
 		});
 	};
-	createNote = (event) => {
+	addNote = (event) => {
 		event.preventDefault();
 		this.setState({
 			note: [

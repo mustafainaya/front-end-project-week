@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Route } from 'react-router-dom';
 import MyNotes from '../src/Components/rightContent/MyNotes';
 import CreateNote from '../src/Components/leftContent/CreateNote';
+import Nav from '../src/Components/leftContent/Nav';
 import './App.css';
 
 class App extends Component {
@@ -45,6 +46,7 @@ class App extends Component {
 		return (
 			<div className="App">
 				{' '}
+				<Route path="/" Component={Nav} />
 				<Route exact path="/" render={(props) => <MyNotes {...props} notes={this.state.notes} />} />
 			</div>
 		);
