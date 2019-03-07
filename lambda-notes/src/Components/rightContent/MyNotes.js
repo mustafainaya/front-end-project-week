@@ -1,12 +1,14 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 const MyNotes = (props) => {
 	return (
 		<div>
 			{props.notes.map((note) => {
 				return (
-					<NoteDetails key={note._id} title={note.title} textBody={note.textBody} _id={note._id} {...props} />
+					<NoteDetails key={note._id} title={note.title} textBody={note.textBody} _id={note._id} {...props}>
+						<Link to={`/viewNote/${note._id}`}> </Link>
+					</NoteDetails>
 				);
 			})}
 		</div>
@@ -16,6 +18,7 @@ const MyNotes = (props) => {
 const NoteDetails = (props) => {
 	return (
 		<div className="notes">
+			<h1>{props.tags}</h1>
 			<h3>{props.title}</h3>
 			<p>{props.textBody}</p>
 		</div>

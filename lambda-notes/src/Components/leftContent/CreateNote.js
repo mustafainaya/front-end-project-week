@@ -24,11 +24,12 @@ class CreateNote extends Component {
 	};
 	addNote = (event) => {
 		event.preventDefault();
+		this.props.addNote(this.state.note);
 		this.setState({
 			note: [
 				{
-					tags: [],
 					_id: null,
+					tags: [],
 					title: '',
 					textBody: ''
 				}
@@ -40,8 +41,8 @@ class CreateNote extends Component {
 			<div>
 				<h2>Create a New Note:</h2>
 				<form onSubmit={this.addNote}>
-					<input type="text" name="title" onChange={this.handleSubmit} value={this.state.note.title} />
-					<input type="text" name="textBody" onChange={this.handleSubmit} value={this.state.note.textBody} />
+					<input type="text" name="title" onChange={this.changeHandler} value={this.state.note.title} />
+					<input type="text" name="textBody" onChange={this.changeHandler} value={this.state.note.textBody} />
 					<button type="submit">Save</button>
 				</form>
 			</div>
