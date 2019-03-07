@@ -34,9 +34,9 @@ class EditNote extends Component {
 		let textBody;
 		let _id;
 
-		let theId = this.props.match.params._id;
+		let noteId = this.props.match.params._id;
 		const noteBody = this.props.notes.find((note) => {
-			return `${note._id}` === theId;
+			return `${note._id}` === noteId;
 		});
 		console.log('notebody', noteBody);
 		if (noteBody) {
