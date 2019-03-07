@@ -54,7 +54,7 @@ class EditNote extends Component {
 
 	render() {
 		return (
-			<EditListContainer>
+			<EditContainer>
 				<EditListHeader>Edit Note:</EditListHeader>
 				<Form onSubmit={this.editNote}>
 					<Input
@@ -73,14 +73,14 @@ class EditNote extends Component {
 					/>
 					<UpdateButton type="submit">Update</UpdateButton>
 				</Form>
-			</EditListContainer>
+			</EditContainer>
 		);
 	}
 }
 
 export default EditNote;
 
-const EditListContainer = styled.section`
+const EditContainer = styled.section`
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
