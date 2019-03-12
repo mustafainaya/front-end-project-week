@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import viewNotes from '../leftContent/ViewNotes';
 
 const MyNotes = (props) => {
 	return (
@@ -7,7 +8,16 @@ const MyNotes = (props) => {
 			{props.notes.map((note) => {
 				return (
 					<NoteDetails key={note._id} title={note.title} textBody={note.textBody} _id={note._id} {...props}>
-						<Link to={`/viewNote/${note._id}`}> </Link>
+						<Link
+							to={`/viewNote/${note._id}`}
+							title={note.title}
+							textBody={note.textBody}
+							_id={note._id}
+							{...props}
+							component={viewNotes}
+						>
+							{' '}
+						</Link>
 					</NoteDetails>
 				);
 			})}

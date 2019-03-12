@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import styled from 'styled-components';
 import { Route } from 'react-router-dom';
 import EditNote from '../src/Components/rightContent/EditNote';
 import MyNotes from '../src/Components/rightContent/MyNotes';
@@ -101,7 +102,7 @@ class App extends Component {
 		return (
 			<div className="App">
 				{' '}
-				<Route path="/" Component={Nav} />
+				<Route path="/" component={Nav} />
 				<Route exact path="/" render={(props) => <MyNotes {...props} notes={this.state.notes} />} />
 				<Route
 					exact
