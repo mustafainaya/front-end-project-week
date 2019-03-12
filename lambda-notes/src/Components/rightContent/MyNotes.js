@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import viewNotes from '../leftContent/ViewNotes';
 import styled from 'styled-components';
-
+import './MyNotes.css';
 const MyNotes = (props) => {
 	return (
 		<div>
@@ -50,6 +50,7 @@ NoteDetails.default = {
 export default MyNotes;
 
 const NotesContainer = styled.section`
-width:100%
-display:flex;
-margin-left:25%;`;
+	width: 100%;
+	display: flex;
+	margin-left: 25%;
+`;
