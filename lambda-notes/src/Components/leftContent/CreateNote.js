@@ -45,14 +45,12 @@ class CreateNote extends Component {
 
 					<form onSubmit={this.addNote}>
 						<Input type="text" name="title" onChange={this.changeHandler} value={this.state.note.title} />
-						<TextArea2>
-							<input
-								type="text"
-								name="textBody"
-								onChange={this.changeHandler}
-								value={this.state.note.textBody}
-							/>
-						</TextArea2>
+						<TextArea2
+							type="text"
+							name="textBody"
+							onChange={this.changeHandler}
+							value={this.state.note.textBody}
+						/>
 						<button type="submit">Save</button>
 					</form>
 				</InputContainer>
