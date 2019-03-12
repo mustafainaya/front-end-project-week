@@ -35,11 +35,13 @@ const MyNotes = (props) => {
 
 const NoteDetails = (props) => {
 	return (
-		<div className="notes">
-			<h1>{props.tags}</h1>
-			<h3>{props.title}</h3>
-			<p>{props.textBody}</p>
-		</div>
+		<NoteBox>
+			<div className="notes">
+				<h1>{props.tags}</h1>
+				<h3>{props.title}</h3>
+				<p>{props.textBody}</p>
+			</div>
+		</NoteBox>
 	);
 };
 
@@ -52,5 +54,11 @@ export default MyNotes;
 const NotesContainer = styled.section`
 	width: 100%;
 	display: flex;
-	margin-left: 25%;
+	flex-wrap: wrap;
+	margin-left: 35%;
+`;
+const NoteBox = styled.section`
+	display: flex;
+	width: 100%;
+	flex-wrap: wrap;
 `;
