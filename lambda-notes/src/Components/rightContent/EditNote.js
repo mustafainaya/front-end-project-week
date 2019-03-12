@@ -27,6 +27,7 @@ class EditNote extends Component {
 			title: this.state.title,
 			textBody: this.state.textBody
 		});
+		this.props.history.push(`/`);
 	};
 
 	componentDidMount() {

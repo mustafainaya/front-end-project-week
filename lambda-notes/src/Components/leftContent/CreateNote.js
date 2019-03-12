@@ -36,6 +36,7 @@ class CreateNote extends Component {
 				}
 			]
 		});
+		this.props.history.push('/');
 	};
 	render() {
 		return (

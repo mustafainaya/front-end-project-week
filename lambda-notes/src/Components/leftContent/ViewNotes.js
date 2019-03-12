@@ -31,6 +31,7 @@ class ViewNotes extends Component {
 		let theId = this.props.match.params._id;
 		this.props.handleDeleteModal(theId);
 		this.setState({ showModal: false });
+		this.props.history.push('/');
 	};
 
 	render() {

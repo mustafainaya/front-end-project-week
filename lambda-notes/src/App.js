@@ -7,6 +7,7 @@ import MyNotes from '../src/Components/rightContent/MyNotes';
 import CreateNote from '../src/Components/leftContent/CreateNote';
 import ViewNotes from '../src/Components/leftContent/ViewNotes';
 import Nav from '../src/Components/leftContent/Nav';
+import withRouter from 'react-router-dom';
 import './App.css';
 
 class App extends Component {
@@ -42,7 +43,6 @@ class App extends Component {
 			.then((res) => {
 				console.log('responsela', res);
 				this.setState((prevState) => ({ notes: [ ...prevState.notes, note ] }));
-				this.props.history.push('/');
 			})
 			.catch((err) => console.log('error', err));
 	};
@@ -69,8 +69,7 @@ class App extends Component {
 					return { notes: mappedArray };
 				});
 				console.log('note in PUT', note);
-				console.log('this.state.notes', this.state.notes);
-				this.props.history.push(`/viewNote/${note._id}`);
+				console.log('this', this.state.notes);
 			})
 			.catch((error) => {
 				console.error('PUT/UPDATE req error', error);
@@ -91,7 +90,6 @@ class App extends Component {
 				});
 				console.log('delete,', response);
 				console.log('delete data ', response.data);
-				this.props.history.push('/');
 			})
 			.catch((error) => {
 				console.log('DELETE error', error);
