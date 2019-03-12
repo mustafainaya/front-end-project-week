@@ -84,7 +84,7 @@ class ViewNotes extends Component {
 						</NoteContainer>
 					</SectionContainer>
 				) : (
-					<div> Other Data </div>
+					<div> Data </div>
 				)}
 			</DivContainer>
 		);

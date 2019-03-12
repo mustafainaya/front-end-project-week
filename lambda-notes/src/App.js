@@ -64,13 +64,12 @@ class App extends Component {
 			.then((response) => {
 				console.log('PUT/UPDATE req response: ', response.data);
 				console.log('PUT/UPDATE ID: ', _id);
-				this.setState((theState) => {
-					let mappedArray = theState.notes.map((i) => (i._id === _id ? response.data : i));
+				this.setState((prevState) => {
+					let mappedArray = prevState.notes.map((i) => (i._id === _id ? response.data : i));
 					return { notes: mappedArray };
 				});
 				console.log('note in PUT', note);
 				console.log('this.state.notes', this.state.notes);
-				this.props.history.push(`/viewNote/${note._id}`);
 			})
 			.catch((error) => {
 				console.error('PUT/UPDATE req error', error);
