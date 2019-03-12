@@ -70,6 +70,7 @@ class App extends Component {
 				});
 				console.log('note in PUT', note);
 				console.log('this.state.notes', this.state.notes);
+				this.props.history.push(`/viewNote/${note._id}`);
 			})
 			.catch((error) => {
 				console.error('PUT/UPDATE req error', error);
