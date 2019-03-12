@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import styled from 'styled-components';
 import { Route } from 'react-router-dom';
 import EditNote from '../src/Components/rightContent/EditNote';
 import MyNotes from '../src/Components/rightContent/MyNotes';
 import CreateNote from '../src/Components/leftContent/CreateNote';
 import ViewNotes from '../src/Components/leftContent/ViewNotes';
 import Nav from '../src/Components/leftContent/Nav';
-import withRouter from 'react-router-dom';
 import './App.css';
 
 class App extends Component {
