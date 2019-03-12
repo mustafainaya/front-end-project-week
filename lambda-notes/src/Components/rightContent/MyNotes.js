@@ -9,24 +9,23 @@ const MyNotes = (props) => {
 			{props.notes.map((note) => {
 				return (
 					<NotesContainer>
-						<NoteDetails
-							key={note._id}
+						<Link
+							to={`/viewNote/${note._id}`}
 							title={note.title}
 							textBody={note.textBody}
 							_id={note._id}
 							{...props}
+							component={viewNotes}
 						>
-							<Link
-								to={`/viewNote/${note._id}`}
+							{' '}
+							<NoteDetails
+								key={note._id}
 								title={note.title}
 								textBody={note.textBody}
 								_id={note._id}
 								{...props}
-								component={viewNotes}
-							>
-								{' '}
-							</Link>
-						</NoteDetails>
+							/>
+						</Link>
 					</NotesContainer>
 				);
 			})}
