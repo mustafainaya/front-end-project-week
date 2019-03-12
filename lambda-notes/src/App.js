@@ -61,11 +61,11 @@ class App extends Component {
 		console.log('PUT note', note);
 		axios
 			.put(`https://fe-notes.herokuapp.com/note/edit/${_id}`, note)
-			.then((res) => {
-				console.log('PUT/UPDATE req response: ', res.data);
+			.then((response) => {
+				console.log('PUT/UPDATE req response: ', response.data);
 				console.log('PUT/UPDATE ID: ', _id);
 				this.setState((theState) => {
-					let mappedArray = theState.notes.map((i) => (i._id === _id ? res.data : i));
+					let mappedArray = theState.notes.map((i) => (i._id === _id ? response.data : i));
 					return { notes: mappedArray };
 				});
 				console.log('note in PUT', note);
